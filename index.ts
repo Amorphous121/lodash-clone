@@ -8,9 +8,35 @@ import concat from './array-methods/concat';
 import last from './array-methods/last';
 import head from './array-methods/head';
 import nth from './array-methods/nth';
+import difference from './array-methods/difference';
+import differenceBy from './array-methods/differenceBy';
+import differenceWith from './array-methods/differenceWith';
 
-var other = nth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], -10);
+var objects = [
+  { x: 1, y: 2 },
+  { x: 2, y: 1 },
+];
+
+const other = differenceWith(
+  objects,
+  [{ x: 1, y: 2 }],
+  (a, b) => a.x === b.x && a.y === b.y
+);
 
 console.log(other);
 
-export { filter, map, includes, compact, chunk, fill, head, last, concat };
+export {
+  nth,
+  difference,
+  filter,
+  map,
+  includes,
+  compact,
+  chunk,
+  fill,
+  head,
+  last,
+  concat,
+  differenceWith,
+  differenceBy,
+};
